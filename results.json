@@ -1,0 +1,188 @@
+{
+  "mllib": {
+    "binary": {
+      "features": 692,
+      "classes": 2,
+      "auc": 1.0,
+      "accuracy": 1.0,
+      "fcl": "2x692"
+    },
+    "multiclass": {
+      "features": 4,
+      "classes": 3,
+      "accuracy": 0.92,
+      "fcl": "3x4"
+    }
+  },
+  "deploy_energy": [
+    {
+      "layer": "Binary LR (libsvm)",
+      "N": 2,
+      "M": 692,
+      "numa_e": 4163.2,
+      "uma_e": 5552.0,
+      "savings_pct": 25.01
+    },
+    {
+      "layer": "Multinomial LR",
+      "N": 3,
+      "M": 4,
+      "numa_e": 50.8,
+      "uma_e": 72.0,
+      "savings_pct": 29.44
+    },
+    {
+      "layer": "KWS layer-1",
+      "N": 384,
+      "M": 408,
+      "numa_e": 394238.4,
+      "uma_e": 629760.0,
+      "savings_pct": 37.4
+    },
+    {
+      "layer": "KWS layer-2",
+      "N": 384,
+      "M": 384,
+      "numa_e": 371174.4,
+      "uma_e": 592896.0,
+      "savings_pct": 37.4
+    },
+    {
+      "layer": "KWS layer-3",
+      "N": 24,
+      "M": 384,
+      "numa_e": 23558.4,
+      "uma_e": 37056.0,
+      "savings_pct": 36.42
+    }
+  ],
+  "exp1": {
+    "peak_savings_pct": 37.4,
+    "uma_e": 629760.0
+  },
+  "exp2": {
+    "network": [
+      "64x64",
+      "128x128",
+      "256x256",
+      "384x408",
+      "512x512",
+      "768x768",
+      "1024x1024"
+    ],
+    "best_tile": [
+      64,
+      128,
+      256,
+      384,
+      512,
+      768,
+      1024
+    ],
+    "savings_pct": [
+      36.89,
+      37.19,
+      37.34,
+      37.4,
+      37.42,
+      37.45,
+      37.46
+    ]
+  },
+  "exp_precision": {
+    "bits": [
+      6,
+      8,
+      12,
+      16
+    ],
+    "best_savings_pct": [
+      37.39,
+      37.4,
+      37.41,
+      37.42
+    ]
+  },
+  "exp_drowsy": {
+    "active_banks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "reduction_pct": [
+      85.31,
+      79.62,
+      73.94,
+      68.25,
+      62.56,
+      56.88,
+      51.19,
+      45.5,
+      39.81,
+      34.12,
+      28.44,
+      22.75,
+      17.06,
+      11.38,
+      5.69,
+      0.0
+    ],
+    "schedule_active_banks": 6,
+    "schedule_reduction_pct": 56.88
+  },
+  "exp_conv": [
+    {
+      "layer": "conv1",
+      "Cin": 1,
+      "Cout": 16,
+      "K": 3,
+      "P": 1024,
+      "numa_e": 93134.4,
+      "uma_e": 149792.0,
+      "savings_pct": 37.82
+    },
+    {
+      "layer": "conv2",
+      "Cin": 16,
+      "Cout": 32,
+      "K": 3,
+      "P": 256,
+      "numa_e": 61491.2,
+      "uma_e": 148480.0,
+      "savings_pct": 58.59
+    },
+    {
+      "layer": "conv3",
+      "Cin": 32,
+      "Cout": 64,
+      "K": 3,
+      "P": 64,
+      "numa_e": 71065.6,
+      "uma_e": 106496.0,
+      "savings_pct": 33.27
+    },
+    {
+      "layer": "conv4",
+      "Cin": 64,
+      "Cout": 64,
+      "K": 3,
+      "P": 16,
+      "numa_e": 98918.4,
+      "uma_e": 100352.0,
+      "savings_pct": 1.43
+    }
+  ]
+}
